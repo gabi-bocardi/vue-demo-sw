@@ -1,31 +1,38 @@
 <template>
     <div>
         <form className='enrolForm'>
-            <h1>Student Details</h1>
+            <h1>{{chosenProgram}} Student Details</h1>
             <label>First name:</label>
-            <input type="text" name="fname" />
+            <input type="text" name="fname" v-model='fname' />
             <br />
             <label>Last name:</label>
-            <input type="text" name="lname" />
+            <input type="text" name="lname" v-model='lname' />
             <br />
             <br />
-            <input type='submit' value='Submit' />
+            <input type='submit' value='Submit' @click='handleSubmit'/>
             <br />
+            <label id='studentMsg' className='message'>{{ welcomeMessage }}</label>
         </form>
     </div>
 </template>
 
 
 <script>
-
 export default {
     name: 'enrollmentForm',
+    props: ['chosenProgram'],
     data() {
         return {
-
+            welcomeMessage:'',
+            fname:'',
+            lname:'',
         }
     },
     methods: {
+        handleSubmit(event){
+            event.preventDefault();
+            this.welcomeMessage=`Welcome ${this.fname} ${this.lname}`;
+        }
     }
 
 }
@@ -35,4 +42,5 @@ export default {
     h1{
         color: red;
     }
+
 </style>
