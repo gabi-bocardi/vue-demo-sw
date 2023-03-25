@@ -20,7 +20,7 @@
 <script>
 export default {
     name: 'enrollmentForm',
-    props: ['chosenProgram'],
+    props: ['chosenProgram', 'currentSeats', 'setUpdatedSeats'],
     data() {
         return {
             welcomeMessage:'',
@@ -32,6 +32,7 @@ export default {
         handleSubmit(event){
             event.preventDefault();
             this.welcomeMessage=`Welcome ${this.fname} ${this.lname}`;
+            this.setUpdatedSeats(this.currentSeats-1);
         }
     }
 

@@ -5,9 +5,21 @@
             <option value='UG'>Undergraduate</option>
             <option value='PG'>Postgraduate</option>
         </select>
+        <br>
+        <br>
+        <label>Reamaining Undergraduate seats: {{ ugSeats }}</label>
+        <br>
+        <br>
+        <label> Reamaining Postgraduate seats: {{ pgSeats }}</label>
+        <br>
+        <br>
     </div>
     <div>
-        <EnrollmentForm :chosen-program='program'/>
+        <EnrollmentForm 
+            :chosen-program='program' 
+            :current-seats="program === 'UG' ? ugSeats : pgSeats"
+            :setUpdatedSeats='setUpdatedSeats'
+            />
     </div>
 </template>
 <script>
@@ -20,8 +32,19 @@ export default {
     }, 
     data() {
         return {
-            program: 'UG'
+            program: 'UG',
+            ugSeats: 60,
+            pgSeats:40,
         };
+    },
+    methods: {
+        setUpdatedSeats(updatedSeats) {
+            if(this.program == 'UG'){
+                this.ugSeats = updatedSeats;
+            }else{
+                this.pgSeats = updatedSeats;
+            }
+        }
     }
 }
 </script>
