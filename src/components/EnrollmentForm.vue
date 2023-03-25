@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form className='enrolForm'>
+        <form className='enrollForm'>
             <h1>{{chosenProgram}} Student Details</h1>
             <label>First name:</label>
             <input type="text" name="fname" v-model='fname' />
@@ -9,7 +9,7 @@
             <input type="text" name="lname" v-model='lname' />
             <br />
             <br />
-            <input type='submit' value='Submit' @click='handleSubmit'/>
+            <input type='submit' value='Enroll' @click='handleSubmit'/>
             <br />
             <label id='studentMsg' className='message'>{{ welcomeMessage }}</label>
         </form>

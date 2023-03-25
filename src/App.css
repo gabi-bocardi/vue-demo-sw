@@ -20,7 +20,7 @@
   margin-left: 10px;
 }
 
-.enrolForm {
+.enrollForm {
     font-family: sans-serif;
     font-size: 26px;
     text-align: center;
@@ -28,7 +28,7 @@
     padding: 100px;
 }
 
-.enrolForm input[type=text] {
+.enrollForm input[type=text] {
     margin: 20px;
     padding: 20px;
     border: 0;
@@ -39,7 +39,7 @@
     font-size: inherit;
 }
 
-.enrolForm input[type=submit] {
+.enrollForm input[type=submit] {
     background: #4691A4;
     font-family: inherit;
     font-size: inherit;
