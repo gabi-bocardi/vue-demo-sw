@@ -29,11 +29,9 @@ export default {
     methods:{
         retrieveStudent() {
             let sid = localStorage.getItem('sid');
-            console.log(sid);
             StudentService.get(sid)
             .then(response => {
                 this.student = response.data;
-                console.log(this.student);
             })
             .catch(error => {
                 console.log(error);
