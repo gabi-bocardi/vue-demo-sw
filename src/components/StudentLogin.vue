@@ -10,10 +10,10 @@
                 <label for='password'>Password: </label>
                 <input type='password' id='password' v-model='studentLoginRequest.password'>
             </div>
-            <div>
-                <button type='submit' @click='login'>Login</button>
-            </div>
         </form>
+        <div>
+            <button type='submit' @click='login'>Login</button>
+        </div>
         <p>{{ message }}</p>
     </div>
 </template>
@@ -22,7 +22,7 @@
 import LoginService from '../services/LoginService'
 
 export default {
-    name: 'studentLogin',
+    name: 'StudentLogin',
     data() {
         return {
             studentLoginRequest: { studentId: '', password: ''},
@@ -34,10 +34,13 @@ export default {
             LoginService.login(this.studentLoginRequest)
                 .then(response => {
                     let student = response.data;
-                    console.log(student);
+                    this.message = student;
+                    localStorage.setItem('sid', student.id);
+                    this.$router.push({ name: 'StudentProfile' })
                 })
                 .catch(error => {
                     console.log(error.response.data)
+                    this.message = error.response.data;
                 })
         }
     }, 

@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    name: 'enrollmentForm',
+    name: 'EnrollmentForm',
     props: ['chosenProgram', 'currentSeats', 'setUpdatedSeats', 'setStudentDetail'],
     data() {
         return {

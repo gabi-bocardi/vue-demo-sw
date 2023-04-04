@@ -14,7 +14,7 @@
 
 
 export default{
-    name: 'enrollList',
+    name: 'EnrollList',
     props: {
         studentDetail: {
             fname: '',

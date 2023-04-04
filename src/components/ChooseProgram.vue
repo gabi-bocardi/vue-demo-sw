@@ -7,10 +7,10 @@
         </select>
         <br>
         <br>
-        <label>Reamaining Undergraduate seats: {{ ugSeats }}</label>
+        <label>Remaining Undergraduate seats: {{ ugSeats }}</label>
         <br>
         <br>
-        <label> Reamaining Postgraduate seats: {{ pgSeats }}</label>
+        <label> Remaining Postgraduate seats: {{ pgSeats }}</label>
         <br>
         <br>
     </div>
@@ -31,7 +31,7 @@ import EnrollmentForm from './EnrollmentForm.vue';
 import EnrollList from './EnrollList.vue';
 
 export default {
-    name: 'chooseProgram',
+    name: 'ChooseProgram',
     components: {
         EnrollmentForm,
         EnrollList,
